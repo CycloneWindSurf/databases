@@ -1,0 +1,13 @@
+-- Insert sample data into customers table
+INSERT INTO customers (first_name, last_name) VALUES
+('Jane', 'Doe'),
+('Mikey', 'Smith'),
+('Zhu', 'Yuan'),
+('Corin', 'Wickes');
+
+-- Insert sample data into orders table
+INSERT INTO orders (customer_id, order_status, order_date) VALUES
+(1, 1, '2024-10-10'),
+(2, 2, '2024-10-11'),
+(3, 3, '2024-10-12'),
+(4, 4, '2024-10-13');
