@@ -1,0 +1,19 @@
+SELECT 
+    o.order_id,                     -- Order ID from the orders table
+    c.first_name,                   -- First name from the customers table
+    c.last_name,                    -- Last name from the customers table
+    CASE 
+        WHEN o.order_status = 1 THEN 'Ordered'        -- Replaces '1' with 'Ordered'
+        WHEN o.order_status = 2 THEN 'Shipped'        -- Replaces '2' with 'Shipped'
+        WHEN o.order_status = 3 THEN 'Out For Delivery' -- Replaces '3' with 'Out For Delivery'
+        WHEN o.order_status = 4 THEN 'Delivered'      -- Replaces '4' with 'Delivered'
+        ELSE 'Unknown Status'                         -- Handles any unexpected value
+    END AS order_status,            -- Creates a new column 'order_status' with text values
+    o.order_date                    -- Order date from the orders table
+FROM 
+    orders o                        -- Alias 'o' for orders table
+JOIN 
+    customers c                     -- Alias 'c' for customers table
+    ON o.customer_id = c.customer_id -- Join orders and customers on customer_id
+ORDER BY 
+    o.order_id;                     -- Orders the results by order_id
