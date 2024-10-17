@@ -1,7 +1,7 @@
 -- Insert sample data into customers table
 INSERT INTO customers (first_name, last_name) VALUES
 ('Jane', 'Doe'),
-('Mikey', 'Smith'),
+('Grace', 'Howard'),
 ('Zhu', 'Yuan'),
 ('Corin', 'Wickes');
 
